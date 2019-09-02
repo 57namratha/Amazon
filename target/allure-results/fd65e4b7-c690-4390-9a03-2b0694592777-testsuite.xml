@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1567400201935" stop="1567400327790" version="1.4.23" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : amazonproductpurchase</name>
+    <title>Default Suite : amazonproductpurchase</title>
+    <test-cases>
+        <test-case start="1567400280062" stop="1567400325290" status="passed">
+            <name>purchaseTheProduct</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="DESKTOP-I7KTSAJ"/>
+                <label name="thread" value="5008@DESKTOP-I7KTSAJ.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1567237218778" stop="1567237324736" version="1.4.23" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Smoke suite : Purchase the product from Amazon</name>
+    <title>Smoke suite : Purchase the product from Amazon</title>
+    <test-cases>
+        <test-case start="1567237303670" stop="1567237324028" status="passed">
+            <name>loginIsSuccessful</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="DESKTOP-I7KTSAJ"/>
+                <label name="thread" value="9528@DESKTOP-I7KTSAJ.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
