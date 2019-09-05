@@ -5,6 +5,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+import java.util.List;
+
 /*
 Object repository for UI elements involved in purchasing an item process
  */
@@ -17,14 +19,18 @@ public class PurchaseItemObjectRepository extends ObjectRepository {
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id=\"com.amazon.mShop.android.shopping:id/rs_search_src_text\"]")
     protected static MobileElement searchField;
 
+//    @AndroidFindBy(xpath = "\n" +
+////            "(//*[@class='android.widget.ScrollView']//*[@class='android.view.ViewGroup']//*[@class='android.widget.ImageView' and contains(@content-desc,',image')])[4]" )
+////    protected static MobileElement searchResults;
+
     @AndroidFindBy(xpath = "\n" +
-            "(//*[@class='android.widget.ScrollView']//*[@class='android.view.ViewGroup']//*[@class='android.widget.ImageView' and contains(@content-desc,',image')])[4]" )
-    protected static MobileElement searchResults;
+            "(//*[@class='android.widget.ScrollView']//*[@class='android.view.ViewGroup']//*[@class='android.widget.ImageView' and contains(@content-desc,',image')])" )
+    protected static List<MobileElement> searchResults;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Filter\"]")
     protected static MobileElement searchResultPage;
 
-    @AndroidFindBy(id = "//android.widget.Button[@resource-id=\"add-to-cart-button\"]")
+    @AndroidFindBy(id="add-to-cart-button")
     protected static MobileElement addToCartButton;
 
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Cart\"]")

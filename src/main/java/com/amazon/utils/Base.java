@@ -23,7 +23,7 @@ public class Base {
         Dimension size = driver.manage().window().getSize();
         System.out.println(size);
         int starty = (int) (size.height*0.80);
-        int endy = (int) (size.height*0.20);
+        int endy = (int) (size.height*0.10);
         int startx = size.width/2;
 
         driver.swipe(startx, starty, startx, endy, stepSize);

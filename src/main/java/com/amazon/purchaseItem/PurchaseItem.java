@@ -1,6 +1,8 @@
 package com.amazon.purchaseItem;
 
 import com.amazon.utils.Base;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidKeyCode;
 
@@ -13,6 +15,20 @@ public class PurchaseItem extends Base {
     }
 
     //Search fo the 65 inch tv
+//    public void search(String searchKey) {
+//        try {
+//            waitUntilElementIsVisible(pI.searchField);
+//            pI.searchField.click();
+//            waitUntilElementIsVisible(pI.searchField);
+//            pI.searchField.sendKeys(searchKey);
+//            ((AndroidDriver) driver).pressKeyCode(AndroidKeyCode.ENTER);
+//            waitUntilElementIsVisible(pI.searchResultPage);
+//            pI.searchResults.click();
+//        } catch (Exception e) {
+//             System.out.println("Exception occured"+ e.getMessage());
+//        }
+//    }
+
     public void search(String searchKey) {
         try {
             waitUntilElementIsVisible(pI.searchField);
@@ -21,23 +37,30 @@ public class PurchaseItem extends Base {
             pI.searchField.sendKeys(searchKey);
             ((AndroidDriver) driver).pressKeyCode(AndroidKeyCode.ENTER);
             waitUntilElementIsVisible(pI.searchResultPage);
-            pI.searchResults.click();
+            int searchResultCount =  pI.searchResults.size();
+            System.out.println("Search results are+"+searchResultCount);
+            //Skip first and last element
+            if(searchResultCount != 3)
+                pI.searchResults.get(2).click();
         } catch (Exception e) {
-             System.out.println("Exception occured"+ e.getMessage());
+            System.out.println("Exception occured"+ e.getMessage());
         }
     }
+
 
     //Add the searched content to cart
     public void addTheSearchedItemToCart()  {
         try {
             //scroll the page to click on add to cart button
-            boolean notPresent = true;
-            while(notPresent){
-                scrollUp(2000);
-                if(pI.addToCartButton.isDisplayed())
-                    notPresent=false;
-            }
+//            boolean notPresent = true;
+//            while(notPresent){
+//                scrollUp(2000);
+//                if(pI.addToCartButton.isDisplayed())
+//                    notPresent=false;
+//            }
 
+            scrollUp(2000);
+//            driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Add to Cart\"))"));
             pI.addToCartButton.click();
         } catch (Exception e) {
             System.out.println("Exception occured"+ e.getMessage());
